@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  maven-build:
+    image: maven:3.8.2-openjdk-11
+    command: mvn clean package
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+      - ./.m2:/root/.m2
+      - ./target:/usr/src/app/target
+      

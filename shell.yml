@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  authorize:
+    image: org/shell-authorizer
+    container_name: shell-authorizer
+    build:
+      context: .
+      dockerfile: src/main/docker/ShellDockerfile
+      args:
+        JAR_FILE: target/*.jar
+        JAVA_OPTS: -Djava.io.tmpdir=/tmp
+    stdin_open: true
+    volumes:
+      - ./tmp:/tmp

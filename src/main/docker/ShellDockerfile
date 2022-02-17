@@ -1,0 +1,6 @@
+FROM findepi/graalvm:java11-native
+VOLUME /tmp
+ARG JAR_FILE
+ARG ENTRYPOINT_FILE
+COPY ${JAR_FILE} app.jar
+CMD ["/bin/bash"]

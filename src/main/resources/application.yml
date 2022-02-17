@@ -1,0 +1,23 @@
+spring:
+  main:
+    web-application-type: NONE
+    banner-mode: off
+  profiles:
+    active: shell
+
+application:
+  core:
+    transaction:
+      any-merchant-frequency-limit:
+        minutes: 2
+        amount: 3
+      same-transaction-frequency-limit:
+        minutes: 2
+        amount: 1
+    error:
+      account-already-initialized-key: "account-already-initialized"
+      account-not-initialized-key: "account-not-initialized"
+      account-card-not-active-key: "card-not-active"
+      insufficient-limit-key: "insufficient-limit"
+      high-frequency-small-interval-key: "high-frequency-small-interval"
+      duplicate-transaction-key: "doubled-transaction"
